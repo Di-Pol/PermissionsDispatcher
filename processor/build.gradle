@@ -3,7 +3,6 @@ import permissions.dispatcher.AndroidJarDependencyPlugin
 import permissions.dispatcher.AarToJarConversionPlugin
 
 apply plugin: 'kotlin'
-apply plugin: 'org.jetbrains.dokka'
 apply plugin: "com.vanniktech.maven.publish"
 apply plugin: AndroidJarDependencyPlugin
 apply plugin: AarToJarConversionPlugin
@@ -31,7 +30,6 @@ dependencies {
     testCompileAar project(path: ":library", configuration: "default")
 
     testImplementation androidJar()
-    testImplementation files(Jvm.current().getToolsJar())
     testImplementation "junit:junit:$JUNIT_VERSION"
     testImplementation "org.mockito:mockito-core:$MOCKITO_VERSION"
     testImplementation "com.google.testing.compile:compile-testing:$COMPILE_TESTING_VERSION"
